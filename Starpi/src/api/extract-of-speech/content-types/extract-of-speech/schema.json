@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extract_of_speeches",
+  "info": {
+    "singularName": "extract-of-speech",
+    "pluralName": "extract-of-speeches",
+    "displayName": "Extract Of Speech"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "speeches": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "current_issues",
+  "info": {
+    "singularName": "current-issue",
+    "pluralName": "current-issues",
+    "displayName": "Current Issue",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string"
+    },
+    "issue": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

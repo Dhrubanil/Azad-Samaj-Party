@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepageimages",
+  "info": {
+    "singularName": "homepageimage",
+    "pluralName": "homepageimages",
+    "displayName": "Homepageimage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export {serverBasePath} from '../../server_ip';
