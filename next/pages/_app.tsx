@@ -1,4 +1,6 @@
 import '@/styles/globals.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import '@/styles/carousel.css'
 import type { AppProps } from 'next/app'
 import { useState } from "react";
 import AspComponent from './components';

@@ -12,7 +12,8 @@ import { Box } from "@mui/system";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { ArrowForwardIos } from "@mui/icons-material";
-import { CarouselComponent } from "./carousel";
+
+import ImageSlider from "./image_slider";
 
 export const CurrentIssues = (props) => {
   const [issues, setIssues] = useState([]);
@@ -28,43 +29,80 @@ export const CurrentIssues = (props) => {
       });
       console.log("res", res.data.data);
       setIssues(res.data.data);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   useEffect(() => {
     getCurrentIssues();
   }, []);
 
+  const issue: any = [
+    <img src='https://picsum.photos/200' alt='' />,
+    <img src='https://picsum.photos/201' alt='' />,
+    <img src='https://picsum.photos/202' alt='' />,
+    <img src='https://picsum.photos/203' alt='' />,
+    <img src='https://picsum.photos/204' alt='' />,
+  ]
+  const leftArrowStyles = {
+    position: "absolute",
+    top: "120%",
+    transform: "translate(0, -50%)",
+    left: "6%",
+    fontSize: "45px",
+    color: "blue",
+    zIndex: 1,
+    cursor: "pointer",
+  };
+
+  const rightArrowStyles = {
+    position: "absolute",
+    top: "120%",
+    transform: "translate(0, -50%)",
+    right: "6%",
+    fontSize: "45px",
+    color: "blue",
+    zIndex: 1,
+    cursor: "pointer",
+  };  
+
+
   return (
     <div className="current_issues">
       <div>CURRENT ISSUES</div>
-      <CarouselComponent issues={issues}/>
-      {/* <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={1}>
+      <ImageSlider issues={issues}/>
+      {/* <CarouselContainer slides={issue} interval={2000}/> */}
+      {/* <div>
+        <div style={leftArrowStyles}>
+          ❰
+        </div>
+        <div style={rightArrowStyles}>
+          ❱
+        </div>
+        <div>
+          <CarouselContainer interval={0} slidesPresented={3}>
+            {issues.map((c) => (<CarouselChild key={c.id}>
+              <Card key={c.id} sx={{ maxWidth: 345, maxHeight: 300 }}>
+                <CardMedia
+                  sx={{ height: 200 }}
+                  image={`${serverBasePath}${c.attributes.issue.data.attributes.url}`}
+                  title="green iguana"
+                />
+                <CardContent className="card_content">
+                  <Typography variant="body2" color="white">
+                    {c.attributes.Description}
+                  </Typography>
+                </CardContent>
+                <CardActions className="card_content">
+                  <IconButton size="large" style={{ marginLeft: "auto" }}>
+                    <ArrowForwardIos fontSize="small" style={{ color: 'white' }} />
+                  </IconButton>
+                </CardActions>
+              </Card>
+            </CarouselChild>))}
+          </CarouselContainer>
 
-        {issues.map((c) => (
-          <Grid item xs={3}>
-            <Card key={c.id}  sx={{ maxWidth: 345,maxHeight: 300 }}>
-              <CardMedia
-                sx={{ height: 200 }}
-                image={`${serverBasePath}${c.attributes.issue.data.attributes.url}`}
-                title="green iguana"
-              />
-              <CardContent className="card_content">
-                <Typography variant="body2" color="white">
-                  {c.attributes.Description}
-                </Typography>
-              </CardContent>
-              <CardActions alig  className="card_content">
-                <IconButton size="large" style={{marginLeft: "auto"}}>
-                  <ArrowForwardIos fontSize="small" style={{color:'white'}} />
-                </IconButton>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-        </Grid>
-      </Box> */}
+        </div>
+      </div> */}
     </div>
   );
 };

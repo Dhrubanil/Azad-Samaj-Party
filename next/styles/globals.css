@@ -191,10 +191,14 @@ a {
   /* display: block; */
   /* width: '100px' */
 }
-.carousel {
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+
+.azad_speaks {
+  background-color: rgb(56 65 229) !important;
+  height: 700px;
+}
+
+.azadspeaks_card{
+  padding-top: '3%' !important;
+  background-color: rgb(56 65 229) !important;
+  border: none !important;
 }
